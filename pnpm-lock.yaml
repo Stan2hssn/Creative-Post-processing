@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      gsap:
+        specifier: ^3.12.7
+        version: 3.12.7
       stats.js:
         specifier: ^0.17.0
         version: 0.17.0
@@ -23,7 +26,7 @@ importers:
         version: 5.1.1
       vite-plugin-glsl:
         specifier: ^1.3.0
-        version: 1.3.0(vite@5.1.1)
+        version: 1.3.0(rollup@4.9.6)(vite@5.1.1)
 
 packages:
 
@@ -255,6 +258,9 @@ packages:
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
 
+  gsap@3.12.7:
+    resolution: {integrity: sha512-V4GsyVamhmKefvcAKaoy0h6si0xX7ogwBoBSs2CTJwt7luW0oZzC0LhdkyuKV8PJAXr7Yaj8pMjCKD4GJ+eEMg==}
+
   nanoid@3.3.7:
     resolution: {integrity: sha512-eSRppjcPIatRIMC1U6UngP8XFcz8MQWGQdt1MTBQ7NaAmvXDfvNxbvWV3x2y6CdEUciCSsDHDQZbhYaB8QEo2g==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
@@ -396,11 +402,13 @@ snapshots:
   '@esbuild/win32-x64@0.19.12':
     optional: true
 
-  '@rollup/pluginutils@5.1.0':
+  '@rollup/pluginutils@5.1.0(rollup@4.9.6)':
     dependencies:
       '@types/estree': 1.0.5
       estree-walker: 2.0.2
       picomatch: 2.3.1
+    optionalDependencies:
+      rollup: 4.9.6
 
   '@rollup/rollup-android-arm-eabi@4.9.6':
     optional: true
@@ -474,6 +482,8 @@ snapshots:
   fsevents@2.3.3:
     optional: true
 
+  gsap@3.12.7: {}
+
   nanoid@3.3.7: {}
 
   picocolors@1.0.0: {}
@@ -513,9 +523,9 @@ snapshots:
 
   three@0.161.0: {}
 
-  vite-plugin-glsl@1.3.0(vite@5.1.1):
+  vite-plugin-glsl@1.3.0(rollup@4.9.6)(vite@5.1.1):
     dependencies:
-      '@rollup/pluginutils': 5.1.0
+      '@rollup/pluginutils': 5.1.0(rollup@4.9.6)
       vite: 5.1.1
     transitivePeerDependencies:
       - rollup
