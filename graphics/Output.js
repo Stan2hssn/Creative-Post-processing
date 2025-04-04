@@ -73,5 +73,9 @@ export default class {
         helper.resize();
       }
     });
+
+    if (this.composer) {
+      this.composer.resize();
+    }
   }
 }

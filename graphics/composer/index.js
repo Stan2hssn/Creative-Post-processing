@@ -1,7 +1,7 @@
 import Device from "../pure/Device";
 import Common from "../Common";
 
-import ShaderManager from "../managers/ShaderManager";
+import ShaderManager from "../Managers/ShaderManager";
 
 import vertex from "../shaders/composers/view/vertex.glsl";
 import fragment from "../shaders/composers/view/fragment.glsl";
