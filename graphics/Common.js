@@ -12,7 +12,7 @@ class Common {
   };
 
   constructor() {
-    this.managers = {};
+    this.Managers = {};
     this.render = this.render.bind(this);
   }
 

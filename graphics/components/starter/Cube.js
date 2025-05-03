@@ -7,9 +7,9 @@ import {
   Uniform,
 } from "three";
 
-import ShadersManager from "../../managers/ShaderManager";
+import ShadersManager from "../../Managers/ShaderManager";
 
-import AssetsManager from "../../managers/AssetsManager";
+import AssetsManager from "../../Managers/AssetsManager";
 
 export default class {
   params = {
