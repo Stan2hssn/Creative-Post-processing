@@ -17,7 +17,8 @@
   "dependencies": {
     "gsap": "^3.12.7",
     "mitt": "^3.0.1",
-    "tweakpane": "^4.0.5",
-    "three": "^0.161.0"
+    "stats-gl": "^3.6.0",
+    "three": "^0.161.0",
+    "tweakpane": "^4.0.5"
   }
 }
