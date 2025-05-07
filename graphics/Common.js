@@ -10,7 +10,7 @@ import { Pane } from "tweakpane";
 class Common {
   // create a scene and the parameters for the scene
   params = {
-    sceneColor: 0x000000,
+    sceneColor: 0x000cb0,
     cameraFov: 50,
     cameraNear: 0.01,
     cameraFar: 100.0,

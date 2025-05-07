@@ -72,7 +72,7 @@ class CameraManager {
     this.main.position.set(
       Math.sin(Input.smoothCoords.x) - 0.5,
       Math.sin(Input.smoothCoords.y) - 0.5,
-      -3 + (Math.cos(Input.smoothCoords.y) - 0.5) * 0.2,
+      3 + (Math.cos(Input.smoothCoords.y) - 0.5) * 0.2,
     );
     this.main.lookAt(0, 0, 0);
   }

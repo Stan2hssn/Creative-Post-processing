@@ -46,8 +46,6 @@ export default class {
 
     this.knotMesh = new Mesh(this.knot, this.knotMaterial);
 
-    mainGroup.add(this.knotMesh, ambiantLight, directionalLight);
-
     scene.add(mainGroup, interactivesGroup);
   }
 
@@ -61,7 +59,7 @@ export default class {
   // create components
   createComponents() {
     this.Components = {
-      // particles: new Particles(),
+      particles: new Particles(),
     };
   }
 
@@ -138,6 +136,11 @@ export default class {
     Object.keys(this.Components).forEach((key) => {
       if (typeof this.Components[key].setDebug !== "function") return;
       this.Components[key].setDebug(pane);
+    });
+
+    const folder = pane.addFolder({
+      title: "Powers",
+      expanded: true,
     });
   }
 }
