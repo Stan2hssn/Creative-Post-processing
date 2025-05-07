@@ -19,7 +19,7 @@ export default class {
     this.Components.powers = new Powers();
 
     this.helpers.controls = new Controls();
-    this.helpers.grid = new GridHelper(10, 10);
+    // this.helpers.grid = new GridHelper(10, 10);
 
     this.composer = new Composer();
   }
@@ -76,6 +76,24 @@ export default class {
 
     if (this.composer) {
       this.composer.resize();
+    }
+  }
+
+  setDebug(pane) {
+    Object.values(this.Components).forEach((component) => {
+      if (typeof component.setDebug === "function") {
+        component.setDebug(pane);
+      }
+    });
+
+    Object.values(this.helpers).forEach((helper) => {
+      if (typeof helper.setDebug === "function") {
+        helper.setDebug(pane);
+      }
+    });
+
+    if (this.composer) {
+      this.composer.setDebug(pane);
     }
   }
 }

@@ -1,6 +1,7 @@
 import { PerspectiveCamera, OrthographicCamera, Vector3 } from "three";
 
 import Device from "../pure/Device";
+import Input from "../Input";
 
 class CameraManager {
   constructor(params) {
@@ -53,13 +54,28 @@ class CameraManager {
     this.main = this.createCamera({
       type: "perspective",
       name: "main",
-      position: new Vector3(2, 2, 9),
+      position: new Vector3(0, 0, 3),
       lookAt: new Vector3(0, 0, 0),
     });
+
+    this.fbo = this.createCamera({
+      type: "orthographic",
+      name: "fbo",
+      position: new Vector3(0, 0, 1),
+      lookAt: new Vector3(0, 0, 0),
+    });
+
     this.activeCamera = this.cameras.main;
   }
 
-  render(t) {}
+  render(t) {
+    this.main.position.set(
+      Math.sin(Input.smoothCoords.x) - 0.5,
+      Math.sin(Input.smoothCoords.y) - 0.5,
+      -3 + (Math.cos(Input.smoothCoords.y) - 0.5) * 0.2,
+    );
+    this.main.lookAt(0, 0, 0);
+  }
 
   resizeCamera(camera, position, lookAt, aspect) {
     if (!camera) return;
@@ -67,7 +83,9 @@ class CameraManager {
     if (camera.isPerspectiveCamera) {
       camera.aspect = aspect;
     } else if (camera.isOrthographicCamera) {
-      const frustumSize = 10;
+      return;
+
+      const frustumSize = 1;
       camera.left = (-frustumSize * aspect) / 2;
       camera.right = (frustumSize * aspect) / 2;
       camera.top = frustumSize / 2;
